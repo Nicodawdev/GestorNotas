@@ -11,7 +11,8 @@ public class Main {
         do {
             System.out.println("=== GESTOR DE NOTAS ===");
             System.out.println("1. Añadir nota");
-            System.out.println("2. Listar notas"); // NUEVA OPCIÓN
+            System.out.println("2. Listar notas");
+            System.out.println("3. Listar notas importantes"); // NUEVA OPCIÓN
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
             opcion = sc.nextInt();
@@ -40,8 +41,10 @@ public class Main {
                 gestor.agregarNota(titulo, contenido, importante);
 
             } else if (opcion == 2) {
-                // NUEVA LLAMADA
                 gestor.listarNotas();
+            } else if (opcion == 3) {
+                // NUEVA LLAMADA
+                gestor.listarNotasImportantes();
             }
         } while (opcion != 0);
 
