@@ -9,10 +9,11 @@ public class Main {
         int opcion;
 
         do {
-            System.out.println("=== GESTOR DE NOTAS ===");
+            // CAMBIO EN LA RAMA FEATURE-LISTADO
+            System.out.println("=== GESTOR DE NOTAS - VERSION LISTADO ===");
             System.out.println("1. Añadir nota");
             System.out.println("2. Listar notas");
-            System.out.println("3. Listar notas importantes"); // NUEVA OPCIÓN
+            System.out.println("3. Listar notas importantes");
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
             opcion = sc.nextInt();
@@ -43,7 +44,6 @@ public class Main {
             } else if (opcion == 2) {
                 gestor.listarNotas();
             } else if (opcion == 3) {
-                // NUEVA LLAMADA
                 gestor.listarNotasImportantes();
             }
         } while (opcion != 0);
