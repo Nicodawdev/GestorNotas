@@ -9,12 +9,15 @@ public class Main {
         int opcion;
 
         do {
-            System.out.println("=== GESTOR DE NOTAS ===");
+            // CAMBIO EN LA RAMA MAIN
+            System.out.println("=== GESTOR DE NOTAS - VERSION PRINCIPAL ===");
             System.out.println("1. Añadir nota");
+            System.out.println("2. Listar notas");
+            System.out.println("3. Listar notas importantes");
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); // Limpiar el salto de línea
+            sc.nextLine();
 
             if (opcion == 1) {
                 String titulo;
@@ -36,8 +39,12 @@ public class Main {
                 } while (!impStr.equals("s") && !impStr.equals("n"));
 
                 boolean importante = impStr.equals("s");
-
                 gestor.agregarNota(titulo, contenido, importante);
+
+            } else if (opcion == 2) {
+                gestor.listarNotas();
+            } else if (opcion == 3) {
+                gestor.listarNotasImportantes();
             }
         } while (opcion != 0);
 
