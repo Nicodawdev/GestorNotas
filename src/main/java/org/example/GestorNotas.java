@@ -4,25 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestorNotas {
-    // Colección interna para almacenar las notas en memoria
     private List<Nota> notas = new ArrayList<>();
 
-    // Método añadido en la FASE 4: Alta de notas
     public void agregarNota(String titulo, String contenido, boolean importante) {
-        // Generar un ID automáticamente (el tamaño de la lista + 1)
         int nuevoId = notas.size() + 1;
-
-        // Crear la nueva nota
         Nota nuevaNota = new Nota(nuevoId, titulo, contenido, importante);
-
-        // Almacenar la nota en memoria
         notas.add(nuevaNota);
-
         System.out.println("Nota añadida con éxito.");
     }
 
-    // Método temporal de la Fase 2 (opcional, para comprobar la estructura)
-    public List<Nota> getNotas() {
-        return notas;
+    public void listarNotas() {
+        if (notas.isEmpty()) {
+            System.out.println("No hay notas guardadas.");
+        } else {
+            for (Nota nota : notas) {
+                System.out.println(nota);
+            }
+        }
+    }
+
+    // NUEVO MÉTODO AÑADIDO EN FASE 9
+    public void listarNotasImportantes() {
+        boolean hayImportantes = false;
+        if (notas.isEmpty()) {
+            System.out.println("No hay notas guardadas.");
+            return;
+        }
+        for (Nota nota : notas) {
+            if (nota.isImportante()) {
+                System.out.println(nota);
+                hayImportantes = true;
+            }
+        }
+        if (!hayImportantes) {
+            System.out.println("No hay notas marcadas como importantes.");
+        }
     }
 }

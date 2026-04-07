@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Scanner;
 
 public class Main {
@@ -9,8 +7,8 @@ public class Main {
         int opcion;
 
         do {
-            // CAMBIO EN LA RAMA MAIN
-            System.out.println("=== GESTOR DE NOTAS - VERSION PRINCIPAL ===");
+            // === ESTA ES LA LÍNEA DEL CONFLICTO RESUELTO ===
+            System.out.println("=== GESTOR DE NOTAS - VERSION FINAL ===");
             System.out.println("1. Añadir nota");
             System.out.println("2. Listar notas");
             System.out.println("3. Listar notas importantes");
